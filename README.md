@@ -8,3 +8,7 @@ To use:
 2. Change the commands slice to contain all the possible commands. The ones you added with cobra add.
 
 ***Note*** Every time you 'cobra add' a new command it needs to go here. TODO: make this something we can configure on compile time in the makefile.
+
+Use something like grep "Use:" *.go | grep -v root.go | awk '{print $3}' | sed 's/^.//;s/..$//' | tr '\n' ' '
+
+Then set a build variable using -X to go build
